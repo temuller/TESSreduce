@@ -5,7 +5,7 @@ import tessreduce as tr
 
 class TestTESSreduce(unittest.TestCase):
 
-    def __init__(self):
+    def __init__(self, *args):
         self.ra = 189.1385817
         self.dec = 11.2316535
         self.tess = tr.tessreduce(ra=self.ra, dec=self.dec)
