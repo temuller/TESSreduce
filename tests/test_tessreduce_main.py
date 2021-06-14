@@ -5,11 +5,22 @@ import tessreduce as tr
 
 class TestTESSreduce(unittest.TestCase):
 
-    def setUp(self):
+    @classmethod
+    def setUpClass(cls):
+        """ Initial settup run only once before all the tests
+        """
+        super(TestTESSreduce, cls).setUpClass()
+
         ra = 189.1385817
         dec = 11.2316535
-        self.tess = tr.tessreduce(ra=ra, dec=dec)
-        self.tess.get_ref()
+        cls.tess = tr.tessreduce(ra=ra, dec=dec)
+        cls.tess.get_ref()
+
+    #def setUp(self):
+    #    ra = 189.1385817
+    #    dec = 11.2316535
+    #    self.tess = tr.tessreduce(ra=ra, dec=dec)
+    #    self.tess.get_ref()
 
     def test_Make_mask(self):
         self.tess.Make_mask()
